@@ -23,6 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
+    - run: npm ci
     - run: npm run build
     - uses: BetaHuhn/do-spaces-action@13515d126a67967c7f9d171670a8fc54a58d2cd2
       with:
