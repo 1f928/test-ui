@@ -29,7 +29,7 @@ jobs:
       with:
         access_key: ${{ secrets.DO_ACCESS_KEY }}
         secret_key: ${{ secrets.DO_SECRET_KEY }}
-        region_name: ${{ secrets.DO_REGION_NAME }}
+        space_region: ${{ secrets.DO_REGION_NAME }}
         space_name: ${{ secrets.DO_SPACE_NAME }}
         source: build
         out_dir: test-ui
