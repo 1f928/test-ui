@@ -10,7 +10,6 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    needs: [setup]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
@@ -20,7 +19,7 @@ jobs:
   push_build:
     name: Push build directory to S3-compliant storage service
     runs-on: ubuntu-latest
-    needs: [setup, test]
+    needs: [test]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
