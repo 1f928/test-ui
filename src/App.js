@@ -6,6 +6,8 @@ import {
   Link
 } from 'react-router-dom';
 
+import star from './assets/star.png';
+
 function App() {
   return (
     <div className="App">
@@ -56,7 +58,7 @@ function Sun(props) {
   return (
     <>
       <h2>Nested Path Test! 🌞</h2>
-      <img src="/static/star.png" alt="meaningful" />
+      <img src={star} alt="meaningful" />
     </>
   );
 }
