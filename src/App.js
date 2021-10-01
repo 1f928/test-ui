@@ -9,13 +9,13 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Nav />
         <div className="content">
           <Switch>
-            <Route path="./star/sun" component={Sun} />
-            <Route path="./star" component={Star} />
-            <Route path="./" component={Home} />
+            <Route path="/star/sun" component={Sun} />
+            <Route path="/star" component={Star} />
+            <Route path="/" component={Home} />
           </Switch>
           <Footer />
         </div>
