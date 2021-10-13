@@ -57,7 +57,7 @@ function Home(props) {
   return (
     <>
     <h2>UI TEST!</h2>
-    { isMobile ? 'mobile' : 'not mobile' }
+    { isMobile ? 'mobile' : 'not mobile' } - ({window.innerWidth})
     </>
   );
 }
