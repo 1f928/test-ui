@@ -59,6 +59,8 @@ function Home(props) {
     <h2>UI TEST!</h2>
     { isMobile ? 'mobile' : 'not mobile' } - ({window.innerWidth}, {window.innerHeight})
     window.visualViewport.width: {window.visualViewport.width }
+    window.screen.width: {window.screen.width}
+    media query width: {window.matchMedia('(min-width: 1000px)').matches ? 'true' : 'false'}
     </>
   );
 }
