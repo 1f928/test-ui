@@ -58,7 +58,7 @@ function Home(props) {
     <>
     <h2>UI TEST!</h2>
     { isMobile ? 'mobile' : 'not mobile' } - ({window.innerWidth}, {window.innerHeight})
-    { document.documentElement.clientWidth }
+    window.visualViewport.width: {window.visualViewport.width }
     </>
   );
 }
