@@ -39,28 +39,26 @@ function Nav(props) {
 }
 
 const useMobileCheck = () => {
-  const [width, setWidth] = useState();
 
-  const handleResize = () => setWidth(window.innerWidth);
+  const getWidth = () => Math.min(window.screen.width, window.innerWidth);
+  const [width, setWidth] = useState(getWidth);
+
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', () => setWidth(getWidth));
+    return () => window.removeEventListener('resize', () => setWidth(getWidth));
   }, []);
 
-  return width < 768;
+  return { isMobile: width < 768, width: width };
 };
 
 function Home(props) {
 
-  const isMobile = useMobileCheck();
+  const {isMobile, width} = useMobileCheck();
 
   return (
     <>
     <h2>UI TEST!</h2>
-    { isMobile ? 'mobile' : 'not mobile' } - ({window.innerWidth}, {window.innerHeight})
-    window.visualViewport.width: {window.visualViewport.width }
-    window.screen.width: {window.screen.width}
-    media query width: {window.matchMedia('(min-width: 1000px)').matches ? 'true' : 'false'}
+    { isMobile ? 'mobile' : 'not mobile' } - width: {width}
     </>
   );
 }
