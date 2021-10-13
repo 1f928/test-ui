@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -37,10 +38,27 @@ function Nav(props) {
   );
 }
 
+const useMobileCheck = () => {
+  const [width, setWidth] = useState();
+
+  const handleResize = () => setWidth(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width < 768;
+};
+
 function Home(props) {
 
+  const isMobile = useMobileCheck();
+
   return (
+    <>
     <h2>UI TEST!</h2>
+    { isMobile ? 'mobile' : 'not mobile' }
+    </>
   );
 }
 
